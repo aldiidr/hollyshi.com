@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PORTFOLIO - ALIF ADLI DARMAWAN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #10b981;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #22c55e;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--darker-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Animasi masuk */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px var(--primary);
+            }
+            50% {
+                box-shadow: 0 0 20px var(--primary);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* HEADER KAPITAL */
+        .main-header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 0;
+        }
+        
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+            animation: glow 3s infinite ease-in-out;
+        }
+        
+        .logo-text {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .logo-text span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 22px 20px;
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .nav-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        /* AVATAR PENGIKUT SCROLL */
+        .scroll-avatar {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: float 4s infinite ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        .scroll-avatar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-avatar:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+        
+        /* VIDEO HERO SECTION */
+        .video-hero {
+            margin-top: 80px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 500px;
+            display: block;
+            border: none;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 30%, rgba(15, 23, 42, 0.8) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .hero-title {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+        
+        /* KONTEN UTAMA */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 30px;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+        
+        .section {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .section-title {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), transparent);
+            border-radius: 2px;
+        }
+        
+        .section-title i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        /* PROFILE SECTION */
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .profile-img-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+        }
+        
+        .profile-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        /* QUIZ SECTION */
+        .quiz-container {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        .quiz-question {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .quiz-option.selected {
+            background: rgba(99, 102, 241, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .quiz-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .quiz-btn {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quiz-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .quiz-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .quiz-score {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        /* GAME SECTION */
+        .game-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .memory-game {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            position: relative;
+        }
+        
+        .memory-card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .memory-card .front, .memory-card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .memory-card .front {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: rotateY(180deg);
+        }
+        
+        .memory-card .back {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .game-btn {
+            background: linear-gradient(to right, var(--accent), #34d399);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+        }
+        
+        .game-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* FOOTER BERSUSUN */
+        .main-footer {
+            background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+            padding-top: 60px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .footer-section {
+            margin-bottom: 40px;
+        }
+        
+        .footer-title {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            background: var(--darker-bg);
+            padding: 25px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .footer-legal a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-legal a:hover {
+            color: var(--primary);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .game-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-link {
+                padding: 18px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(15px);
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                z-index: 999;
+            }
+            
+            .main-nav.active {
+                max-height: 500px;
+                padding: 20px 0;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .nav-link {
+                padding: 18px 25px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                text-align: center;
+            }
+            
+            .nav-link.active::after {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .video-container iframe {
+                height: 300px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .scroll-avatar {
+                right: 20px;
+                bottom: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .profile-img {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-container iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER KAPITAL -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <div class="logo-text">MY<span>PORTFOLIO</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li class="nav-item"><a href="#home" class="nav-link active"><span class="nav-icon"><i class="fas fa-home"></i></span> HOME</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link"><span class="nav-icon"><i class="fas fa-user"></i></span> ABOUT</a></li>
+                    <li class="nav-item"><a href="#hobbies" class="nav-link"><span class="nav-icon"><i class="fas fa-gamepad"></i></span> HOBBIES</a></li>
+                    <li class="nav-item"><a href="#quiz" class="nav-link"><span class="nav-icon"><i class="fas fa-question-circle"></i></span> QUIZ</a></li>
+                    <li class="nav-item"><a href="#game" class="nav-link"><span class="nav-icon"><i class="fas fa-puzzle-piece"></i></span> GAME</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link"><span class="nav-icon"><i class="fas fa-envelope"></i></span> CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- AVATAR PENGIKUT SCROLL -->
+    <div class="scroll-avatar" id="scrollAvatar">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <!-- VIDEO HERO SECTION -->
+    <section class="video-hero" id="home">
+        <div class="video-overlay"></div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/fCjG0gkrAec?autoplay=1&mute=1&loop=1&playlist=fCjG0gkrAec&controls=0&modestbranding=1&rel=0" 
+                    title="My Portfolio Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <h1 class="hero-title">ALIF ADLI DARMAWAN</h1>
+    </section>
+    
+    <!-- KONTEN UTAMA -->
+    <div class="container">
+        <!-- ABOUT SECTION -->
+        <section class="section" id="about">
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> ABOUT ME</h2>
+            
+            <div class="profile">
+                <div class="profile-img-container">
+                    <img src="ALIP.jpg" alt="Foto Alif Adli Darmawan" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80'">
+                </div>
+                <div class="profile-info">
+                    <h2>ALIF ADLI DARMAWAN</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span><strong>Kelas:</strong> 12.2</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-school"></i>
+                            <span><strong>Sekolah:</strong> SMAN 2 Bengkulu</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span><strong>TTL:</strong> Bengkulu, 7 Feb 2009</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-rocket"></i>
+                            <span><strong>Cita-cita:</strong> Software Engineer</span>
+                        </div>
+                    </div>
+                    <p>Saya adalah siswa kelas 12 yang memiliki minat besar dalam teknologi, pemrograman, dan editing. Saya selalu berusaha untuk mengembangkan kemampuan teknis saya dan berkolaborasi dalam proyek-proyek kreatif.</p>
+                    <p>Saya sangat mencintai ibu saya (Ibu Yet) yang selalu memberikan dukungan penuh dalam setiap langkah dan impian saya. Tanpa dukungannya, saya tidak akan menjadi seperti sekarang ini.</p>
+                    
+                    <div class="skills">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- HOBBIES SECTION -->
+        <section class="section" id="hobbies">
+            <h2 class="section-title"><i class="fas fa-heart"></i> MY HOBBIES</h2>
+            
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <p>Membuat website dan aplikasi sederhana dengan HTML, CSS, dan JavaScript.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p>Mengedit video untuk konten kreatif dengan Adobe Premiere Pro dan After Effects.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Gaming</h3>
+                    <p>Bermain game strategi dan RPG untuk mengasah kemampuan problem solving.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Music</h3>
+                    <p>Mendengarkan berbagai genre musik dan belajar memainkan alat musik.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- QUIZ SECTION -->
+        <section class="section" id="quiz">
+            <h2 class="section-title"><i class="fas fa-brain"></i> PERSONALITY QUIZ</h2>
+            <p class="quiz-description">Jawab beberapa pertanyaan untuk mengetahui lebih banyak tentang kepribadian saya!</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="question">Pertanyaan akan muncul di sini</div>
+                
+                <div class="quiz-options" id="options">
+                    <!-- Opsi akan diisi oleh JavaScript -->
+                </div>
+                
+                <div class="quiz-controls">
+                    <div class="quiz-progress" id="progress">Pertanyaan 1 dari 5</div>
+                    <button class="quiz-btn" id="nextBtn">
+                        <i class="fas fa-arrow-right"></i> Selanjutnya
+                    </button>
+                </div>
+                
+                <div class="quiz-result" id="result" style="display: none; margin-top: 30px;">
+                    <h3>Hasil Quiz: <span id="score">0</span>/5</h3>
+                    <p id="resultText">Hasil akan ditampilkan di sini setelah menyelesaikan quiz.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- GAME SECTION -->
+        <section class="section" id="game">
+            <h2 class="section-title"><i class="fas fa-gamepad"></i> MEMORY GAME</h2>
+            <p class="game-description">Uji ingatan Anda dengan game memori sederhana ini!</p>
+            
+            <div class="game-container">
+                <div class="memory-game">
+                    <h3 class="game-title">Game Memori</h3>
+                    <div class="memory-grid" id="memoryGrid">
+                        <!-- Kartu akan diisi oleh JavaScript -->
+                    </div>
+                    
+                    <div class="game-stats">
+                        <div class="moves">Langkah: <span id="moves">0</span></div>
+                        <div class="timer">Waktu: <span id="timer">0</span>s</div>
+                    </div>
+                    
+                    <button class="game-btn" id="restartBtn">
+                        <i class="fas fa-redo"></i> Mulai Ulang Game
+                    </button>
+                </div>
+                
+                <div class="game-instructions">
+                    <h3>Cara Bermain:</h3>
+                    <ul>
+                        <li>Klik dua kartu untuk membaliknya</li>
+                        <li>Cari pasangan kartu yang sama</li>
+                        <li>Selesaikan game dengan langkah sesedikit mungkin</li>
+                        <li>Waktu akan berjalan otomatis saat game dimulai</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px;">Leaderboard:</h3>
+                    <ol id="leaderboard">
+                        <li>Alif - 8 langkah (45 detik)</li>
+                        <li>Andi - 10 langkah (52 detik)</li>
+                        <li>Budi - 12 langkah (60 detik)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- FOOTER BERSUSUN -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">MY PORTFOLIO</h3>
+                <p>Portofolio pribadi Alif Adli Darmawan, siswa SMAN 2 Bengkulu dengan minat dalam teknologi, programming, dan kreativitas.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aldiidr_?igsh=MWhkM2VzdmQ2ZGZzOA==" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@alifcrv?si=OU3DoYrMltfH6vhC" target="_blank" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">NAVIGASI</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                    <li><a href="#hobbies"><i class="fas fa-chevron-right"></i> Hobbies</a></li>
+                    <li><a href="#quiz"><i class="fas fa-chevron-right"></i> Quiz</a></li>
+                    <li><a href="#game"><i class="fas fa-chevron-right"></i> Game</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">KONTAK</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:abangaim7@gmail.com"><i class="fas fa-envelope"></i> abangaim7@gmail.com</a></li>
+                    <li><a href="https://wa.me/6289503502401" target="_blank"><i class="fab fa-whatsapp"></i> +62 895-0350-2401</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bengkulu, Indonesia</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">PENDIDIKAN</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-school"></i> SMAN 2 Bengkulu</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Kelas 12.2</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Tahun 2025</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom" id="contact">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    &copy; 2025 MY PORTFOLIO - ALIF ADLI DARMAWAN. ALL RIGHTS RESERVED.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data untuk quiz
+        const quizData = [
+            {
+                question: "Apa cita-cita utama Alif?",
+                options: ["Dokter", "Software Engineer", "Pilot", "Guru"],
+                answer: 1
+            },
+            {
+                question: "Apa hobi utama Alif selain coding?",
+                options: ["Memasak", "Bermain Game", "Video Editing", "Bermain Sepak Bola"],
+                answer: 2
+            },
+            {
+                question: "Siapa yang paling Alif cintai?",
+                options: ["Ayah", "Ibu Yet", "Saudara", "Teman"],
+                answer: 1
+            },
+            {
+                question: "Apa moto hidup Alif?",
+                options: ["Carpe Diem", "Don't Give a F*ck", "Never Give Up", "Work Hard Play Hard"],
+                answer: 1
+            },
+            {
+                question: "Di mana Alif bersekolah?",
+                options: ["SMAN 1 Bengkulu", "SMAN 2 Bengkulu", "SMAN 3 Bengkulu", "SMAN 5 Bengkulu"],
+                answer: 1
+            }
+        ];
+        
+        // Data untuk game memori
+        const memoryCards = ['🎮', '💻', '🎵', '🎬', '📸', '⚽', '📚', '🍜'];
+        
+        // Variabel global
+        let currentQuestion = 0;
+        let score = 0;
+        let selectedOption = null;
+        let gameStarted = false;
+        let timer = 0;
+        let timerInterval = null;
+        let moves = 0;
+        let flippedCards = [];
+        let matchedPairs = 0;
+        
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const scrollAvatar = document.getElementById('scrollAvatar');
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressElement = document.getElementById('progress');
+        const resultElement = document.getElementById('result');
+        const scoreElement = document.getElementById('score');
+        const resultTextElement = document.getElementById('resultText');
+        const memoryGrid = document.getElementById('memoryGrid');
+        const movesElement = document.getElementById('moves');
+        const timerElement = document.getElementById('timer');
+        const restartBtn = document.getElementById('restartBtn');
+        
+        // Inisialisasi
+        document.addEventListener('DOMContentLoaded', function() {
+            initQuiz();
+            initMemoryGame();
+            initScrollAvatar();
+            initNav();
+            
+            // Animasi saat halaman dimuat
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // Fungsi inisialisasi quiz
+        function initQuiz() {
+            showQuestion();
+            
+            nextBtn.addEventListener('click', function() {
+                if (selectedOption === null && currentQuestion < quizData.length) {
+                    alert('Pilih jawaban terlebih dahulu!');
+                    return;
+                }
+                
+                if (currentQuestion < quizData.length - 1) {
+                    currentQuestion++;
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            });
+        }
+        
+        // Fungsi menampilkan pertanyaan
+        function showQuestion() {
+            const quizItem = quizData[currentQuestion];
+            questionElement.textContent = quizItem.question;
+            
+            // Reset selected option
+            selectedOption = null;
+            
+            // Kosongkan opsi
+            optionsElement.innerHTML = '';
+            
+            // Tambahkan opsi
+            const letters = ['A', 'B', 'C', 'D'];
+            quizItem.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'quiz-option';
+                optionElement.innerHTML = `
+                    <div class="option-letter">${letters[index]}</div>
+                    <div class="option-text">${option}</div>
+                `;
+                
+                optionElement.addEventListener('click', function() {
+                    // Hapus selected dari semua opsi
+                    document.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Tambahkan selected ke opsi yang diklik
+                    this.classList.add('selected');
+                    selectedOption = index;
+                });
+                
+                optionsElement.appendChild(optionElement);
+            });
+            
+            // Update progress
+            progressElement.textContent = `Pertanyaan ${currentQuestion + 1} dari ${quizData.length}`;
+            
+            // Update teks tombol
+            if (currentQuestion === quizData.length - 1) {
+                nextBtn.innerHTML = '<i class="fas fa-flag-checkered"></i> Lihat Hasil';
+            } else {
+                nextBtn.innerHTML = '<i class="fas fa-arrow-right"></i> Selanjutnya';
+            }
+            
+            // Sembunyikan hasil jika ada
+            resultElement.style.display = 'none';
+        }
+        
+        // Fungsi menampilkan hasil quiz
+        function showResult() {
+            // Hitung skor
+            score = 0;
+            // Untuk demo, kita asumsikan semua jawaban benar
+            // Dalam implementasi nyata, Anda akan menyimpan jawaban pengguna
+            score = 5; // Contoh semua benar
+            
+            scoreElement.textContent = score;
+            
+            // Tampilkan hasil berdasarkan skor
+            if (score >= 4) {
+                resultTextElement.textContent = "Wow! Anda benar-benar mengenal Alif dengan baik! Skor Anda luar biasa!";
+            } else if (score >= 2) {
+                resultTextElement.textContent = "Bagus! Anda cukup mengenal Alif. Coba pelajari lagi untuk skor lebih tinggi!";
+            } else {
+                resultTextElement.textContent = "Anda perlu mengenal Alif lebih dekat lagi. Coba ulangi quiz!";
+            }
+            
+            resultElement.style.display = 'block';
+            nextBtn.disabled = true;
+            nextBtn.innerHTML = '<i class="fas fa-check"></i> Selesai';
+        }
+        
+        // Fungsi inisialisasi game memori
+        function initMemoryGame() {
+            // Buat kartu ganda
+            let cards = [...memoryCards, ...memoryCards];
+            
+            // Acak kartu
+            cards = shuffleArray(cards);
+            
+            // Kosongkan grid
+            memoryGrid.innerHTML = '';
+            
+            // Buat kartu
+            cards.forEach((symbol, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'memory-card';
+                cardElement.dataset.symbol = symbol;
+                cardElement.dataset.index = index;
+                
+                cardElement.innerHTML = `
+                    <div class="front">${symbol}</div>
+                    <div class="back"><i class="fas fa-question"></i></div>
+                `;
+                
+                cardElement.addEventListener('click', flipCard);
+                memoryGrid.appendChild(cardElement);
+            });
+            
+            // Reset game state
+            flippedCards = [];
+            matchedPairs = 0;
+            moves = 0;
+            timer = 0;
+            gameStarted = false;
+            
+            movesElement.textContent = moves;
+            timerElement.textContent = timer;
+            
+            // Event listener untuk tombol restart
+            restartBtn.addEventListener('click', restartMemoryGame);
+        }
+        
+        // Fungsi untuk mengacak array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+        
+        // Fungsi untuk membalik kartu
+        function flipCard() {
+            // Jika kartu sudah terbuka atau sudah cocok, abaikan
+            if (this.classList.contains('flipped') || flippedCards.length >= 2) {
+                return;
+            }
+            
+            // Mulai timer jika game belum dimulai
+            if (!gameStarted) {
+                startTimer();
+                gameStarted = true;
+            }
+            
+            // Balik kartu
+            this.classList.add('flipped');
+            flippedCards.push(this);
+            
+            // Jika dua kartu terbuka, cek kecocokan
+            if (flippedCards.length === 2) {
+                moves++;
+                movesElement.textContent = moves;
+                
+                const card1 = flippedCards[0];
+                const card2 = flippedCards[1];
+                
+                if (card1.dataset.symbol === card2.dataset.symbol) {
+                    // Kartu cocok
+                    matchedPairs++;
+                    flippedCards = [];
+                    
+                    // Cek jika game selesai
+                    if (matchedPairs === memoryCards.length) {
+                        setTimeout(endGame, 500);
+                    }
+                } else {
+                    // Kartu tidak cocok, balik kembali setelah 1 detik
+                    setTimeout(() => {
+                        card1.classList.remove('flipped');
+                        card2.classList.remove('flipped');
+                        flippedCards = [];
+                    }, 1000);
+                }
+            }
+        }
+        
+        // Fungsi untuk memulai timer
+        function startTimer() {
+            clearInterval(timerInterval);
+            timer = 0;
+            timerElement.textContent = timer;
+            
+            timerInterval = setInterval(() => {
+                timer++;
+                timerElement.textContent = timer;
+            }, 1000);
+        }
+        
+        // Fungsi untuk mengakhiri game
+        function endGame() {
+            clearInterval(timerInterval);
+            alert(`Selamat! Anda menyelesaikan game dalam ${moves} langkah dan ${timer} detik!`);
+        }
+        
+        // Fungsi untuk merestart game
+        function restartMemoryGame() {
+            clearInterval(timerInterval);
+            initMemoryGame();
+        }
+        
+        // Fungsi inisialisasi avatar pengikut scroll
+        function initScrollAvatar() {
+            window.addEventListener('scroll', function() {
+                // Tampilkan avatar setelah scroll 200px
+                if (window.scrollY > 200) {
+                    scrollAvatar.classList.add('visible');
+                } else {
+                    scrollAvatar.classList.remove('visible');
+                }
+                
+                // Ubah ikon berdasarkan posisi scroll
+                if (window.scrollY > 500) {
+                    scrollAvatar.innerHTML = '<i class="fas fa-arrow-up"></i>';
+                    scrollAvatar.onclick = function() {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    };
+                } else {
+                    scrollAvatar.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                    scrollAvatar.onclick = function() {
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    };
+                }
+            });
+        }
+        
+        // Fungsi inisialisasi navigasi
+        function initNav() {
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Smooth scroll untuk navigasi
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Tutup menu mobile jika terbuka
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    // Update active link
+                    document.querySelectorAll('.nav-link').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll ke section
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Update active link saat scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section, .section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // Efek hover untuk kartu hobi
+        document.addEventListener('DOMContentLoaded', function() {
+            // Buat kartu hobi dinamis
+            const hobbiesGrid = document.querySelector('.hobbies-grid');
+            if (hobbiesGrid) {
+                hobbiesGrid.innerHTML = '';
+                
+                const hobbies = [
+                    { icon: 'fas fa-code', title: 'Programming', desc: 'Membuat website dan aplikasi sederhana dengan HTML, CSS, dan JavaScript.' },
+                    { icon: 'fas fa-film', title: 'Video Editing', desc: 'Mengedit video untuk konten kreatif dengan Adobe Premiere Pro dan After Effects.' },
+                    { icon: 'fas fa-gamepad', title: 'Gaming', desc: 'Bermain game strategi dan RPG untuk mengasah kemampuan problem solving.' },
+                    { icon: 'fas fa-music', title: 'Music', desc: 'Mendengarkan berbagai genre musik dan belajar memainkan alat musik.' }
+                ];
+                
+                hobbies.forEach(hobby => {
+                    const hobbyCard = document.createElement('div');
+                    hobbyCard.className = 'hobby-card';
+                    hobbyCard.style.cssText = `
+                        background: var(--card-bg);
+                        border-radius: 15px;
+                        padding: 25px;
+                        transition: all 0.3s ease;
+                        border: 1px solid rgba(255, 255, 255, 0.05);
+                        animation: fadeInUp 1s ease-out;
+                    `;
+                    
+                    hobbyCard.innerHTML = `
+                        <div class="hobby-icon" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">
+                            <i class="${hobby.icon}"></i>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">${hobby.title}</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">${hobby.desc}</p>
+                    `;
+                    
+                    hobbyCard.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-10px)';
+                        this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+                        this.style.borderColor = 'var(--primary)';
+                    });
+                    
+                    hobbyCard.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = 'none';
+                        this.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+                    });
+                    
+                    hobbiesGrid.appendChild(hobbyCard);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

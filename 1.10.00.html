@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PORTFOLIO - ALIF ADLI DARMAWAN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ffffff;
+            --secondary: #dddddd;
+            --accent: #ffffff;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-light: #f8fafc;
+            --text-muted: #cbd5e1;
+            --success: #24e069;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --body-bg: linear-gradient(45deg, #000000, #0a0f1f, #000814, #001d3d, #000000);
+            --bg-animation: gradientMove 15s ease infinite;
+            --header-bg: rgba(10, 15, 28, 0.5);
+            --header-border: rgba(255, 255, 255, 0.1);
+            --footer-bg: #0a0f1f;
+            --footer-bottom-bg: #020617;
+        }
+
+        html.light {
+            --primary: #0b1220;
+            --secondary: #e6eef8;
+            --accent: #06b6d4;
+            --dark-bg: #ffffff;
+            --darker-bg: #f8fafc;
+            --glass-bg: rgba(10, 10, 10, 0.04);
+            --glass-border: rgba(0, 0, 0, 0.06);
+            --text-light: #0b1220;
+            --text-muted: #374151;
+            --body-bg: linear-gradient(45deg, #f8fafc, #e6eef8);
+            --bg-animation: none;
+            --header-bg: rgba(255, 255, 255, 0.7);
+            --header-border: rgba(0, 0, 0, 0.1);
+            --footer-bg: #e2e8f0;
+            --footer-bottom-bg: #cbd5e1;
+        }
+        
+        @font-face {
+            font-family: 'Coolvetica Rg';
+            src: url('fonts/Coolvetica Rg.woff2') format('woff2'),
+                 url('fonts/Coolvetica Rg.woff') format('woff'),
+                 url('fonts/Coolvetica Rg.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Coolvetica Rg';
+            src: url('fonts/CoolveticaRg-Bold.woff2') format('woff2'),
+                 url('fonts/CoolveticaRg-Bold.woff') format('woff'),
+                 url('fonts/CoolveticaRg-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Coolvetica Rg';
+            src: url('fonts/CoolveticaRg-Italic.woff2') format('woff2'),
+                 url('fonts/CoolveticaRg-Italic.woff') format('woff'),
+                 url('fonts/CoolveticaRg-Italic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: italic;
+            font-display: swap;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Coolvetica Rg', 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #000000, #0a0f1f, #000814, #001d3d, #000000);
+            background-size: 400% 400%;
+            animation: var(--bg-animation);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background 300ms ease, color 300ms ease;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Coolvetica Rg', 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .main-header,
+        .main-header *,
+        .nav-link,
+        .logo-text {
+            font-family: 'Montserrat', 'Space Grotesk', sans-serif !important;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes bounceWord {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .bounce-words {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.2em;
+        }
+        .bounce-words span {
+            display: inline-block;
+            transition: transform 0.7s ease;
+        }
+        .bounce-words:hover span {
+            animation: bounceWord 1.2s ease;
+        }
+        .bounce-words span:nth-child(1) { animation-delay: 0s; }
+        .bounce-words span:nth-child(2) { animation-delay: 0.1s; }
+        .bounce-words span:nth-child(3) { animation-delay: 0.2s; }
+        .bounce-words span:nth-child(4) { animation-delay: 0.3s; }
+        .bounce-words span:nth-child(5) { animation-delay: 0.4s; }
+        .bounce-words span:nth-child(6) { animation-delay: 0.5s; }
+        .bounce-words span:nth-child(7) { animation-delay: 0.6s; }
+        .bounce-words span:nth-child(8) { animation-delay: 0.7s; }
+        .bounce-words span:nth-child(9) { animation-delay: 0.8s; }
+        .bounce-words span:nth-child(10) { animation-delay: 0.9s; }
+
+        @keyframes glowPulse {
+            from { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--secondary); }
+            to { text-shadow: 0 0 15px var(--primary), 0 0 25px var(--secondary); }
+        }
+        
+        .main-header {
+            background-color: var(--header-bg);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--header-border);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            flex-wrap: wrap;
+            row-gap: 10px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 0;
+        }
+        
+        .logo-text {
+            color: var(--text-light);
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .logo-text span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 22px 20px;
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            background-color: rgba(255,255,255,0.05);
+            transform: scale(1.05);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        /* Language select */
+        .language-select {
+            background: var(--glass-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--glass-border);
+            color: var(--primary);
+            padding: 8px 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .language-select:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .language-select option {
+            background: var(--darker-bg);
+            color: var(--text-light);
+        }
+        
+        .scroll-avatar {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.8rem;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: float 4s infinite ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .scroll-avatar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-avatar:hover {
+            transform: scale(1.1);
+            animation: none;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .video-hero {
+            /* slight offset so header doesn’t sit directly on video */
+            margin-top: 20px;
+            padding: 40px 0 0;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+            scroll-margin-top: 20px;
+        }
+        .video-container {
+            /* full width hero video but still part of the page flow */
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+            position: relative;
+            z-index: 2;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            border: none;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 30%, rgba(14, 22, 40, 0.8) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-title {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+            animation: fadeInUp 0.5s ease-out 0.5s both;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+        
+        .section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 0;
+            padding: 40px 30px;
+            margin-bottom: 0;
+            border: none;
+            box-shadow: inset 0 -1px 0 rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            scroll-margin-top: 80px;
+        }
+        .section:last-of-type {
+            box-shadow: none;
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transform: skewX(-15deg);
+            transition: left 0.5s ease;
+            pointer-events: none;
+        }
+        .section:hover::before {
+            left: 150%;
+        }
+        .section:hover {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .section-title {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), transparent);
+            border-radius: 2px;
+        }
+        .section-title i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        .section-description {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        .profile-img-container {
+            position: relative;
+            flex-shrink: 0;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            /* subtle glass without grey, use light border */
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            padding: 5px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;
+        }
+        /* remove hover glow effect */
+        .profile-img-container:hover {
+            transform: scale(1.02);
+        }
+        .profile-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .hobby-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--glass-border);
+            animation: fadeInUp 1s ease-out;
+            text-align: center;
+        }
+        .hobby-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .hobby-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .hobby-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        .hobby-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .quiz-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 20px;
+            border: 1px solid var(--glass-border);
+        }
+        .quiz-question {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .quiz-option:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+        .quiz-option.selected {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--darker-bg);
+        }
+        .quiz-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .quiz-progress {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .quiz-btn {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--darker-bg);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quiz-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+        .quiz-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .quiz-result {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            animation: pulse 0.5s ease;
+        }
+        .quiz-result h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .quiz-result p {
+            color: var(--text-light);
+        }
+        
+        .game-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+            position: relative;
+        }
+        .memory-game {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-align: center;
+        }
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .memory-card {
+            aspect-ratio: 1;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+        .memory-card.flipped {
+            transform: rotateY(180deg);
+        }
+        .memory-card .front,
+        .memory-card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .memory-card .front {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: rotateY(180deg);
+            color: var(--darker-bg);
+        }
+        .memory-card .back {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 2px solid var(--primary);
+        }
+        .memory-card .back i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        .game-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        .game-stats div {
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .game-stats span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .game-btn {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--darker-bg);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            /* match heading font family and size */
+            font-family: 'Coolvetica Rg', 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+        }
+        .game-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+        }
+        .game-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .game-instructions {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid var(--glass-border);
+        }
+        .game-instructions h3 {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .game-instructions ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .game-instructions li {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .game-instructions li::before {
+            content: '';
+            font-size: 0;
+        }
+        #leaderboard {
+            list-style: decimal;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+        #leaderboard li {
+            margin-bottom: 5px;
+            color: var(--text-muted);
+        }
+
+        .music-control {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .music-control:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+        
+        .main-footer {
+            background: var(--footer-bg);
+            padding-top: 60px;
+            margin-top: 0;
+            border-top: 1px solid var(--header-border);
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        .footer-section {
+            margin-bottom: 40px;
+        }
+        .footer-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--glass-border);
+        }
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--darker-bg);
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .footer-bottom {
+            background: var(--footer-bottom-bg);
+            padding: 25px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--glass-border);
+        }
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .footer-legal {
+            display: flex;
+            gap: 25px;
+        }
+        .footer-legal a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-legal a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 1100px) {
+            .game-container { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+            .game-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 900px) {
+            .profile { flex-direction: column; text-align: center; gap: 40px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .nav-link { padding: 18px 15px; font-size: 0.8rem; }
+            .hero-title { font-size: 2.8rem; }
+        }
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 10px 15px;
+            }
+            .logo {
+                order: 1;
+                padding: 10px 0;
+            }
+            .language-select {
+                order: 2;
+                margin-left: auto;
+                margin-right: 10px;
+                margin-top: 0;
+            }
+            .mobile-menu-btn {
+                display: block;
+                order: 3;
+            }
+            .main-nav {
+                order: 4;
+                width: 100%;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                background-color: var(--header-bg);
+                backdrop-filter: blur(15px);
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                z-index: 999;
+            }
+            .main-nav.active { max-height: 500px; padding: 20px 0; }
+            .main-nav ul { flex-direction: column; gap: 0; }
+            .nav-link { padding: 18px 25px; border-bottom: 1px solid var(--glass-border); text-align: center; }
+            .nav-link.active::after { display: none; }
+            .hero-title { font-size: 2.2rem; }
+            .section { padding: 30px 20px; }
+            .video-container iframe { height: 100vh; }
+            .hobbies-grid { grid-template-columns: 1fr; }
+            .footer-bottom-content { flex-direction: column; gap: 20px; text-align: center; }
+            .scroll-avatar { right: 20px; bottom: 20px; width: 50px; font-size: 1.5rem; }
+            .music-control { top: 10px; right: 10px; width: 40px; height: 40px; }
+            .theme-toggle { margin-left: 0; margin-top: 10px; }
+        }
+        @media (max-width: 480px) {
+            .header-container { padding: 0 15px; }
+            .logo-text { font-size: 1.3rem; }
+            .hero-title { font-size: 1.8rem; }
+            .profile-img { width: 220px; height: 220px; }
+            .section-title { font-size: 1.8rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .video-container iframe { height: 100vh; }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">hollyshi<span>.com</span></div>
+            </div>
+
+            <!-- Language selector -->
+            <select id="languageSelect" class="language-select">
+                <option value="id">Indonesia</option>
+                <option value="en">English</option>
+                <option value="ms">Melayu</option>
+                <option value="bengkulu">Melayu Bengkulu</option>
+                <option value="es">Español</option>
+                <option value="pt">Português</option>
+                <option value="ar">العربية</option>
+                <option value="zh">中文</option>
+            </select>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li class="nav-item"><a href="#home" class="nav-link active" data-i18n="nav.home">HOME</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav.about">ABOUT</a></li>
+                    <li class="nav-item"><a href="#hobbies" class="nav-link" data-i18n="nav.hobbies">HOBBIES</a></li>
+                    <li class="nav-item"><a href="#quiz" class="nav-link" data-i18n="nav.quiz">QUIZ</a></li>
+                    <li class="nav-item"><a href="#game" class="nav-link" data-i18n="nav.game">GAME</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav.contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="scroll-avatar" id="scrollAvatar">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <section class="video-hero" id="home">
+        <div class="video-overlay"></div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/fCjG0gkrAec?autoplay=1&mute=1&loop=1&playlist=fCjG0gkrAec&controls=1&modestbranding=1&rel=0&enablejsapi=1" 
+                    title="My Portfolio Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <h1 class="hero-title" data-i18n="hero.title">Hello.</h1>
+    </section>
+    
+    <div class="container">
+        <section class="section" id="about">
+            <h2 class="section-title">
+                <span class="bounce-words glow-text" data-i18n="about.title">About me</span>
+            </h2>
+            <!-- Profile info tetap statis karena berisi data pribadi, tidak diterjemahkan -->
+            <div class="profile">
+                <div class="profile-img-container">
+                    <img src="ALIP.jpeg" alt="Foto Alif Adli Darmawan" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80'">
+                </div>
+                <div class="profile-info">
+                    <h2 class="glow-text">Alif Adli Darmawan</h2>
+                    <div class="info-grid">
+                        <div class="info-item"><span><strong>Kelas:</strong> 12.2</span></div>
+                        <div class="info-item"><span><strong>Sekolah:</strong> SMA Negeri 2 Kota Bengkulu</span></div>
+                        <div class="info-item"><span><strong>TTL:</strong> Bengkulu, 7 Februari 2009</span></div>
+                        <div class="info-item"><span><strong>Cita-cita:</strong> Software Engineer, AI Engineer</span></div>
+                    </div>
+                    <p data-i18n="about.desc1">Website ini saya buat sebagai ruang untuk memperkenalkan diri, membagikan minat, serta mendokumentasikan proses belajar dan perkembangan saya di bidang teknologi dan kreativitas. Saya adalah siswa yang memiliki ketertarikan besar pada dunia pemrograman, sistem informasi, serta video editing. Bagi saya, teknologi bukan hanya tentang kode, tetapi tentang bagaimana sebuah ide bisa diwujudkan menjadi solusi yang nyata dan bermanfaat.</p>
+                    <p data-i18n="about.desc2">Melalui website ini, saya ingin menunjukkan komitmen saya untuk terus belajar, mengembangkan kemampuan teknis, dan membangun portofolio yang lebih kuat dari waktu ke waktu. Saya percaya bahwa proses lebih penting daripada hasil instan, dan setiap langkah kecil yang saya ambil hari ini adalah investasi untuk masa depan saya di dunia IT</p>
+                    
+                    <div class="skills">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Motion Designer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="hobbies">
+            <h2 class="section-title">
+                <span class="bounce-words glow-text" data-i18n="hobbies.title">My Hobbies</span>
+            </h2>
+            <p class="section-description" data-i18n="hobbies.subtitle">Beberapa hobi yang saya tekuni di waktu luang</p>
+            
+            <div class="hobbies-grid" id="hobbiesGrid">
+                <!-- Akan diisi oleh JavaScript dengan data terjemahan -->
+            </div>
+        </section>
+        
+        <section class="section" id="quiz">
+            <h2 class="section-title">
+                <span class="bounce-words glow-text" data-i18n="quiz.title">PERSONALITY QUIZ</span>
+            </h2>
+            <p class="section-description" data-i18n="quiz.subtitle">Jawab beberapa pertanyaan untuk mengetahui seberapa kenal Anda dengan saya!</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-question" id="question">Pertanyaan akan muncul di sini</div>
+                
+                <div class="quiz-options" id="options">
+                    <!-- Opsi akan diisi oleh JavaScript -->
+                </div>
+                
+                <div class="quiz-controls">
+                    <div class="quiz-progress" id="progress">Pertanyaan 1 dari 5</div>
+                    <button class="quiz-btn" id="nextBtn">
+                        <i class="fas fa-arrow-right"></i> <span data-i18n="quiz.next">Selanjutnya</span>
+                    </button>
+                </div>
+                
+                <div class="quiz-result" id="result" style="display: none; margin-top: 30px;">
+                    <h3>Hasil Quiz: <span id="score">0</span>/5</h3>
+                    <p id="resultText">Hasil akan ditampilkan di sini setelah menyelesaikan quiz.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="game">
+            <h2 class="section-title">
+                <span class="bounce-words glow-text" data-i18n="game.title">MEMORY GAME</span>
+            </h2>
+            <p class="section-description" data-i18n="game.subtitle">"Tes IQ" kamu dengan game ini! Alif pernah memainkan game ini!</p>
+            
+            <audio id="gameMusic" loop style="display: none;">
+                <source src="game-music.mp3" type="audio/mpeg">
+                <source src="game-music.ogg" type="audio/ogg">
+                Browser Anda tidak mendukung audio.
+            </audio>
+            
+            <div class="game-container">
+                <div class="memory-game">
+                    <div class="music-control" id="musicControl" onclick="toggleGameMusic()">
+                        <i class="fas fa-play" id="musicIcon"></i>
+                    </div>
+                    
+                    <h3 class="game-title" data-i18n="game.memoryTitle">Game Memori</h3>
+                    <div class="memory-grid" id="memoryGrid"></div>
+                    
+                    <div class="game-stats">
+                        <div><span data-i18n="game.level">Level:</span> <span id="level">1</span></div>
+                        <div><span data-i18n="game.target">Target:</span> <span id="targetTime">100</span>s</div>
+                        <div><span data-i18n="game.time">Waktu:</span> <span id="timer">0</span>s</div>
+                        <div><span data-i18n="game.moves">Langkah:</span> <span id="moves">0</span></div>
+                    </div>
+                    
+                    <button class="game-btn" id="restartBtn">
+                        <i class="fas fa-redo"></i> <span data-i18n="game.restart">Mulai Ulang Game</span>
+                    </button>
+                    <div id="gameMessage" style="text-align: center; margin-top: 10px; font-weight: bold;"></div>
+                </div>
+                
+                <div class="game-instructions">
+                    <h3 data-i18n="game.howto">How To Play:</h3>
+                    <ul>
+                        <li data-i18n="game.rule1">Klik dua kartu untuk membaliknya</li>
+                        <li data-i18n="game.rule2">Cari pasangan kartu yang sama</li>
+                        <li data-i18n="game.rule3">Selesaikan game dengan waktu sesingkat mungkin</li>
+                        <li data-i18n="game.rule4">Level 1: selesai dalam 180 detik, Level 2: 120 detik, Level 3: 60 detik</li>
+                        <li data-i18n="game.rule5">Jika waktu habis, game over. Naik level dengan menyelesaikan tepat waktu!</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px;" data-i18n="game.leaderboard">Leaderboard:</h3>
+                    <ol id="leaderboard">
+                        <li>COMING SOON</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title" data-i18n="footer.aboutTitle">MY PORTFOLIO</h3>
+                <p data-i18n="footer.aboutDesc">Portofolio pribadi Alif Adli Darmawan, siswa SMAN 2 Bengkulu dengan minat dalam teknologi, programming, dan kreativitas.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aldiidr_?igsh=MWhkM2VzdmQ2ZGZzOA==" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@alifcrv" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@hollyshi77?is_from_webapp=1&sender_device=pc" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://github.com/aldiidr" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title" data-i18n="footer.navTitle">NAVIGASI</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About Me</a></li>
+                    <li><a href="#hobbies" data-i18n="nav.hobbies">Hobbies</a></li>
+                    <li><a href="#quiz" data-i18n="nav.quiz">Quiz</a></li>
+                    <li><a href="#game" data-i18n="nav.game">Game</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title" data-i18n="footer.contactTitle">KONTAK</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:abangaim7@gmail.com"><i class="fas fa-envelope"></i> abangaim7@gmail.com</a></li>
+                    <li><a href="https://wa.me/6289503502401" target="_blank"><i class="fab fa-whatsapp"></i> +62 895-0350-2401</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bengkulu, Indonesia</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title" data-i18n="footer.eduTitle">PENDIDIKAN</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-school"></i> SMAN 2 Bengkulu</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Kelas 12.2</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Tahun 2025</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom" id="contact">
+            <div class="footer-bottom-content">
+                <div class="copyright" data-i18n="footer.copyright">
+                    &copy; 2025 MY PORTFOLIO - ALIF ADLI DARMAWAN. ALL RIGHTS RESERVED.
+                </div>
+                <div class="footer-legal">
+                    <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="footer.terms">Terms of Service</a>
+                    <a href="#" data-i18n="footer.cookie">Cookie Policy</a>
+                </div>
+                <div class="footer-update" style="font-size:0.8rem; margin-top:2px;">
+                    Website update : v1.10.00
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============ MULTI LANGUAGE ============
+        const translations = {
+            id: {
+                nav: { home: "HOME", about: "ABOUT", hobbies: "HOBBIES", quiz: "QUIZ", game: "GAME", contact: "CONTACT" },
+                hero: { title: "Hello." },
+                about: { title: "About me", desc1: "Website ini saya buat sebagai ruang untuk memperkenalkan diri, membagikan minat, serta mendokumentasikan proses belajar dan perkembangan saya di bidang teknologi dan kreativitas. Saya adalah siswa yang memiliki ketertarikan besar pada dunia pemrograman, sistem informasi, serta video editing. Bagi saya, teknologi bukan hanya tentang kode, tetapi tentang bagaimana sebuah ide bisa diwujudkan menjadi solusi yang nyata dan bermanfaat.", desc2: "Melalui website ini, saya ingin menunjukkan komitmen saya untuk terus belajar, mengembangkan kemampuan teknis, dan membangun portofolio yang lebih kuat dari waktu ke waktu. Saya percaya bahwa proses lebih penting daripada hasil instan, dan setiap langkah kecil yang saya ambil hari ini adalah investasi untuk masa depan saya di dunia IT" },
+                hobbies: { 
+                    title: "My Hobbies", 
+                    subtitle: "Beberapa hobi yang saya tekuni di waktu luang",
+                    items: [
+                        { icon: 'fas fa-code', title: 'Programming', desc: 'Belajar bahasa pemrograman baru dan membuat project kecil.' },
+                        { icon: 'fas fa-film', title: 'Video Editing', desc: 'Mengedit video dengan after effects maupun capcut. Saya juga suka membuat video cinematic.' },
+                        { icon: 'fa-solid fa-dumbbell', title: 'Gym', desc: 'Menjaga kebugaran tubuh dengan latihan rutin di gym agar banyak cewe datang ke saya.' },
+                        { icon: 'fa-solid fa-plane', title: 'Traveling', desc: 'Jalan-jalan ke tempat baru / keliling dunia.' }
+                    ]
+                },
+                quiz: { title: "Personality Quiz", subtitle: "Jawab beberapa pertanyaan untuk mengetahui seberapa kenal Anda dengan saya!", next: "Selanjutnya", result: "Hasil Quiz" },
+                game: { title: "Memory Game", subtitle: '"Tes IQ" kamu dengan game ini! Alif pernah memainkan game ini!', memoryTitle: "Game Memori", level: "Level:", target: "Target:", time: "Waktu:", moves: "Langkah:", restart: "Mulai Ulang Game", howto: "Cara Bermain:", rule1: "Klik dua kartu untuk membaliknya", rule2: "Cari pasangan kartu yang sama", rule3: "Selesaikan game dengan waktu sesingkat mungkin", rule4: "Level 1: selesai dalam 180 detik, Level 2: 120 detik, Level 3: 60 detik", rule5: "Jika waktu habis, game over. Naik level dengan menyelesaikan tepat waktu!", leaderboard: "Papan Peringkat:" },
+                footer: {
+                    aboutTitle: "MY PORTFOLIO",
+                    aboutDesc: "Portofolio pribadi Alif Adli Darmawan, siswa SMAN 2 Bengkulu dengan minat dalam teknologi, programming, dan kreativitas.",
+                    navTitle: "NAVIGASI",
+                    contactTitle: "KONTAK",
+                    eduTitle: "PENDIDIKAN",
+                    copyright: "© 2025 hollyshi.com - ALIF ADLI DARMAWAN. ALL RIGHTS RESERVED.",
+                    privacy: "Privacy Policy",
+                    terms: "Terms of Service",
+                    cookie: "Cookie Policy"
+                }
+            },
+            en: {
+                nav: { home: "HOME", about: "ABOUT", hobbies: "HOBBIES", quiz: "QUIZ", game: "GAME", contact: "CONTACT" },
+                hero: { title: "Hello." },
+                about: { title: "About me", desc1: "I created this website as a space to introduce myself, share interests, and document my learning process and development in technology and creativity. I am a student with a great interest in programming, information systems, and video editing. For me, technology is not just about code, but about how an idea can be realized into a real and useful solution.", desc2: "Through this website, I want to show my commitment to continue learning, develop technical skills, and build a stronger portfolio over time. I believe that process is more important than instant results, and every small step I take today is an investment for my future in IT." },
+                hobbies: { 
+                    title: "My Hobbies", 
+                    subtitle: "Some hobbies I do in my free time",
+                    items: [
+                        { icon: 'fas fa-code', title: 'Programming', desc: 'Learning new programming languages and building small projects.' },
+                        { icon: 'fas fa-film', title: 'Video Editing', desc: 'Editing videos for YouTube content or school assignments.' },
+                        { icon: 'fa-solid fa-dumbbell', title: 'Gym', desc: 'Maintaining fitness with regular gym workouts.' },
+                        { icon: 'fa-solid fa-plane', title: 'Traveling', desc: 'Visiting new places to find inspiration.' }
+                    ]
+                },
+                quiz: { title: "Personality Quiz", subtitle: "Answer some questions to find out how well you know me!", next: "Next", result: "Quiz Result" },
+                game: { title: "Memory Game", subtitle: '"Test your IQ" with this game! Alif has played this game!', memoryTitle: "Memory Game", level: "Level:", target: "Target:", time: "Time:", moves: "Moves:", restart: "Restart Game", howto: "How To Play:", rule1: "Click two cards to flip them", rule2: "Find matching pairs", rule3: "Finish the game as fast as possible", rule4: "Level 1: complete in 180 seconds, Level 2: 120 seconds, Level 3: 60 seconds", rule5: "If time runs out, game over. Level up by completing on time!", leaderboard: "Leaderboard:" },
+                footer: {
+                    aboutTitle: "MY PORTFOLIO",
+                    aboutDesc: "Personal portfolio of Alif Adli Darmawan, student of SMAN 2 Bengkulu with interests in technology, programming, and creativity.",
+                    navTitle: "NAVIGATION",
+                    contactTitle: "CONTACT",
+                    eduTitle: "EDUCATION",
+                    copyright: "© 2025 MY PORTFOLIO - ALIF ADLI DARMAWAN. ALL RIGHTS RESERVED.",
+                    privacy: "Privacy Policy",
+                    terms: "Terms of Service",
+                    cookie: "Cookie Policy"
+                }
+            },
+            ms: {
+                nav: { home: "LAMAN", about: "TENTANG", hobbies: "HOBI", quiz: "KUIS", game: "PERMAINAN", contact: "HUBUNGI" },
+                hero: { title: "Hai." },
+                about: { title: "Tentang saya", desc1: "Laman web ini saya buat sebagai ruang untuk memperkenalkan diri, berkongsi minat, serta mendokumentasikan proses belajar dan perkembangan saya dalam bidang teknologi dan kreativiti. Saya adalah pelajar yang mempunyai minat yang besar dalam dunia pengaturcaraan, sistem maklumat, serta suntingan video. Bagi saya, teknologi bukan hanya tentang kod, tetapi tentang bagaimana idea boleh diwujudkan menjadi penyelesaian yang nyata dan bermanfaat.", desc2: "Melalui laman web ini, saya ingin menunjukkan komitmen saya untuk terus belajar, mengembangkan kemahiran teknikal, dan membina portfolio yang lebih kukuh dari masa ke masa. Saya percaya bahawa proses lebih penting daripada hasil segera, dan setiap langkah kecil yang saya ambil hari ini adalah pelaburan untuk masa depan saya dalam IT." },
+                hobbies: { 
+                    title: "HOBI SAYA", 
+                    subtitle: "Beberapa hobi yang saya lakukan pada masa lapang",
+                    items: [
+                        { icon: 'fas fa-code', title: 'Pengaturcaraan', desc: 'Mempelajari bahasa pengaturcaraan baru dan membuat projek kecil.' },
+                        { icon: 'fas fa-film', title: 'Suntingan Video', desc: 'Menyunting video untuk kandungan YouTube atau tugasan sekolah.' },
+                        { icon: 'fa-solid fa-dumbbell', title: 'Gim', desc: 'Menjaga kecergasan dengan senaman gim secara berkala.' },
+                        { icon: 'fa-solid fa-plane', title: 'Melancong', desc: 'Melawat tempat baru untuk mencari inspirasi.' }
+                    ]
+                },
+                quiz: { title: "KUIS PERSONALITI", subtitle: "Jawab beberapa soalan untuk mengetahui sejauh mana anda mengenali saya!", next: "Seterusnya", result: "Hasil Kuis" },
+                game: { title: "PERMAINAN MEMORI", subtitle: '"Uji IQ" anda dengan permainan ini! Alif pernah memainkan permainan ini!', memoryTitle: "Permainan Memori", level: "Tahap:", target: "Sasaran:", time: "Masa:", moves: "Langkah:", restart: "Mulakan Semula", howto: "Cara Bermain:", rule1: "Klik dua kad untuk membalikkannya", rule2: "Cari pasangan kad yang sama", rule3: "Selesaikan permainan dengan masa sesingkat mungkin", rule4: "Tahap 1: selesai dalam 180 saat, Tahap 2: 120 saat, Tahap 3: 60 saat", rule5: "Jika masa habis, permainan tamat. Naik tahap dengan menyelesaikan tepat pada masanya!", leaderboard: "Papan Pendahulu:" },
+                footer: {
+                    aboutTitle: "PORTOFOLIO SAYA",
+                    aboutDesc: "Portfolio peribadi Alif Adli Darmawan, pelajar SMAN 2 Bengkulu dengan minat dalam teknologi, pengaturcaraan, dan kreativiti.",
+                    navTitle: "NAVIGASI",
+                    contactTitle: "HUBUNGI",
+                    eduTitle: "PENDIDIKAN",
+                    copyright: "© 2025 PORTOFOLIO SAYA - ALIF ADLI DARMAWAN. HAK CIPTA TERPELIHARA.",
+                    privacy: "Dasar Privasi",
+                    terms: "Syarat Perkhidmatan",
+                    cookie: "Dasar Kuki"
+                }
+            },
+            bengkulu: {
+                nav: { home: "HOME", about: "ABOUT", hobbies: "HOBBIES", quiz: "QUIZ", game: "GAME", contact: "CONTACT" },
+                hero: { title: "Hello." },
+                about: { title: "About me", desc1: "Web iko ambo buek untuk kenalkan diri ambo, berbagi minat, dan mendokumentasikan proses belajar ambo di bidang teknologi dan Ambo adalah siswa yang suko nian dekek dunio pemrograman, sistem informasi, dan video editing. Menurut ambo, teknologi ko bukan cuma tentang kode, tapi tentang cakmano ide pacak diwujudkan jadi solusi nyato dan bermanfaat.", desc2: "Lewat web iko, ambo nak nunjukken komitmen ambo untuk terus belajar, ngembangkan kemampuan teknis, dan ngebangun portofolio yang lebih kuat dari waktu ke waktu. Ambo percayo kalo proses lebih penting daripada hasil instan, dan setiap langkah kecil yang ambo ambik hari ko adalah investasi untuk masa depan ambo di dunia IT." },
+                hobbies: { 
+                    title: "Hobi Ambo", 
+                    subtitle: "Beberapa hobi ambo kalo ambo gabut",
+                    items: [
+                        { icon: 'fas fa-code', title: 'Programming', desc: 'Belajar bahasa pemrograman baru dan ngebuat project kecil-kecilan.' },
+                        { icon: 'fas fa-film', title: 'Ngedit Video', desc: 'Ngedit video untuk konten YouTube atau tugas sekulah.' },
+                        { icon: 'fa-solid fa-dumbbell', title: 'Gym', desc: 'Jago badan dengan latihan rutin di gym.' },
+                        { icon: 'fa-solid fa-plane', title: 'Jalan-jalan', desc: 'Pergi ke tempat baru cari inspirasi.' }
+                    ]
+                },
+                quiz: { title: "Soalan Punyo Ambo", subtitle: "Jawab cak berapo soal iko biar ambo tau seberapo dekat kau dekek ambo!", next: "Lanjut", result: "Hasil Kuis" },
+                game: { title: "Game Buek Ingek", subtitle: '"Tes IQ" kau dengan game ko! Alif pernah main game iko!', memoryTitle: "Game Memori", level: "Level:", target: "Target:", time: "Waktu:", moves: "Langkah:", restart: "Mulai Ulang Game", howto: "Cara Main:", rule1: "Klik duo kartu untuk ngebalikkannyo", rule2: "Cari pasangan dekek yang samo", rule3: "Selesaikan game dengan waktu sesingkat mungkin", rule4: "Level 1: selesai dalam 180 detik, Level 2: 120 detik, Level 3: 60 detik", rule5: "Kalo waktu habis, game over. Naik level dengan nyelesaiken tepat waktu!", leaderboard: "Papan Peringkat:" },
+                footer: {
+                    aboutTitle: "PORTOFOLIO AMBO",
+                    aboutDesc: "Portofolio pribadi Alif Adli Darmawan, warga SMAN 2 Bengkulu yang minat teknologi, programming, dan kreativitas.",
+                    navTitle: "NAVIGASI",
+                    contactTitle: "KONTAK",
+                    eduTitle: "PENDIDIKAN",
+                    copyright: "© 2025 hollyshi.com - ALIF ADLI DARMAWAN. ALL RIGHTS RESERVED.",
+                    privacy: "Kebijakan Privasi",
+                    terms: "Syarat Layanan",
+                    cookie: "Kebijakan Cookie"
+                }
+            },
+            es: {
+                nav: { home: "INICIO", about: "SOBRE MÍ", hobbies: "PASATIEMPOS", quiz: "CUESTIONARIO", game: "JUEGO", contact: "CONTACTO" },
+                hero: { title: "Hola." },
+                about: { title: "Sobre mí", desc1: "Creé este sitio web como un espacio para presentarme, compartir intereses y documentar mi proceso de aprendizaje y desarrollo en tecnología y creatividad. Soy un estudiante con gran interés en la programación, los sistemas de información y la edición de video. Para mí, la tecnología no es solo código, sino cómo una idea puede convertirse en una solución real y útil.", desc2: "A través de este sitio web, quiero mostrar mi compromiso de seguir aprendiendo, desarrollar habilidades técnicas y construir un portafolio más sólido con el tiempo. Creo que el proceso es más importante que los resultados instantáneos, y cada pequeño paso que doy hoy es una inversión para mi futuro en TI." },
+                hobbies: { 
+                    title: "MIS PASATIEMPOS", 
+                    subtitle: "Algunos pasatiempos que hago en mi tiempo libre",
+                    items: [
+                        { icon: 'fas fa-code', title: 'Programación', desc: 'Aprender nuevos lenguajes de programación y hacer pequeños proyectos.' },
+                        { icon: 'fas fa-film', title: 'Edición de Video', desc: 'Editar videos para contenido de YouTube o tareas escolares.' },
+                        { icon: 'fa-solid fa-dumbbell', title: 'Gimnasio', desc: 'Mantener la forma con entrenamientos regulares.' },
+                        { icon: 'fa-solid fa-plane', title: 'Viajar', desc: 'Visitar nuevos lugares para buscar inspiración.' }
+                    ]
+                },
+                quiz: { title: "CUESTIONARIO DE PERSONALIDAD", subtitle: "Responde algunas preguntas para saber qué tan bien me conoces!", next: "Siguiente", result: "Resultado" },
+                game: { title: "JUEGO DE MEMORIA", subtitle: '"Prueba tu IQ" con este juego! Alif ha jugado este juego!', memoryTitle: "Juego de Memoria", level: "Nivel:", target: "Objetivo:", time: "Tiempo:", moves: "Movimientos:", restart: "Reiniciar Juego", howto: "Cómo jugar:", rule1: "Haz clic en dos cartas para voltearlas", rule2: "Encuentra pares iguales", rule3: "Completa el juego en el menor tiempo posible", rule4: "Nivel 1: completar en 180 segundos, Nivel 2: 120 segundos, Nivel 3: 60 segundos", rule5: "Si se acaba el tiempo, juego terminado. ¡Sube de nivel completando a tiempo!", leaderboard: "Tabla de clasificación:" },
+                footer: {
+                    aboutTitle: "MI PORTAFOLIO",
+                    aboutDesc: "Portafolio personal de Alif Adli Darmawan, estudiante de SMAN 2 Bengkulu con interés en tecnología, programación y creatividad.",
+                    navTitle: "NAVEGACIÓN",
+                    contactTitle: "CONTACTO",
+                    eduTitle: "EDUCACIÓN",
+                    copyright: "© 2025 MI PORTAFOLIO - ALIF ADLI DARMAWAN. TODOS LOS DERECHOS RESERVADOS.",
+                    privacy: "Política de Privacidad",
+                    terms: "Términos de Servicio",
+                    cookie: "Política de Cookies"
+                }
+            },
+            pt: {
+                nav: { home: "INÍCIO", about: "SOBRE", hobbies: "PASSATEMPOS", quiz: "QUESTIONÁRIO", game: "JOGO", contact: "CONTATO" },
+                hero: { title: "Olá." },
+                about: { title: "Sobre mim", desc1: "Criei este site como um espaço para me apresentar, compartilhar interesses e documentar meu processo de aprendizado e desenvolvimento em tecnologia e criatividade. Sou um estudante com grande interesse em programação, sistemas de informação e edição de vídeo. Para mim, tecnologia não é apenas código, mas como uma ideia pode ser transformada em uma solução real e útil.", desc2: "Através deste site, quero mostrar meu compromisso de continuar aprendendo, desenvolver habilidades técnicas e construir um portfólio mais forte ao longo do tempo. Acredito que o processo é mais importante que resultados instantâneos, e cada pequeno passo que dou hoje é um investimento para meu futuro em TI." },
+                hobbies: { 
+                    title: "MEUS PASSATEMPOS", 
+                    subtitle: "Alguns passatempos que faço no meu tempo livre",
+                    items: [
+                        { icon: 'fas fa-code', title: 'Programação', desc: 'Aprender novas linguagens de programação e fazer pequenos projetos.' },
+                        { icon: 'fas fa-film', title: 'Edição de Vídeo', desc: 'Editar vídeos para conteúdo do YouTube ou tarefas escolares.' },
+                        { icon: 'fa-solid fa-dumbbell', title: 'Academia', desc: 'Manter a forma com treinos regulares na academia.' },
+                        { icon: 'fa-solid fa-plane', title: 'Viajar', desc: 'Visitar novos lugares para buscar inspiração.' }
+                    ]
+                },
+                quiz: { title: "QUESTIONÁRIO DE PERSONALIDADE", subtitle: "Responda algumas perguntas para saber o quanto você me conhece!", next: "Próximo", result: "Resultado" },
+                game: { title: "JOGO DA MEMÓRIA", subtitle: '"Teste seu QI" com este jogo! Alif já jogou este jogo!', memoryTitle: "Jogo da Memória", level: "Nível:", target: "Alvo:", time: "Tempo:", moves: "Movimentos:", restart: "Reiniciar Jogo", howto: "Como jogar:", rule1: "Clique em duas cartas para virá-las", rule2: "Encontre pares iguais", rule3: "Conclua o jogo no menor tempo possível", rule4: "Nível 1: concluir em 180 segundos, Nível 2: 120 segundos, Nível 3: 60 segundos", rule5: "Se o tempo acabar, fim de jogo. Suba de nível completando no tempo certo!", leaderboard: "Classificação:" },
+                footer: {
+                    aboutTitle: "MEU PORTFÓLIO",
+                    aboutDesc: "Portfólio pessoal de Alif Adli Darmawan, estudante da SMAN 2 Bengkulu com interesse em tecnologia, programação e criatividade.",
+                    navTitle: "NAVEGAÇÃO",
+                    contactTitle: "CONTATO",
+                    eduTitle: "EDUCAÇÃO",
+                    copyright: "© 2025 MEU PORTFÓLIO - ALIF ADLI DARMAWAN. TODOS OS DIREITOS RESERVADOS.",
+                    privacy: "Política de Privacidade",
+                    terms: "Termos de Serviço",
+                    cookie: "Política de Cookies"
+                }
+            },
+            ar: {
+                nav: { home: "الرئيسية", about: "عنّي", hobbies: "الهوايات", quiz: "اختبار", game: "لعبة", contact: "اتصل" },
+                hero: { title: "مرحبا." },
+                about: { title: "عنّي", desc1: "أنشأت هذا الموقع كمساحة لأعرف عن نفسي، وأشارك اهتماماتي، وأوثق عملية التعلم والتطور في مجال التكنولوجيا والإبداع. أنا طالب لدي اهتمام كبير بعالم البرمجة ونظم المعلومات وتحرير الفيديو. بالنسبة لي، التكنولوجيا ليست مجرد أكواد، بل هي كيف يمكن تحويل فكرة إلى حل حقيقي ومفيد.", desc2: "من خلال هذا الموقع، أرغب في إظهار التزامي بمواصلة التعلم، وتطوير المهارات التقنية، وبناء محفظة أقوى بمرور الوقت. أعتقد أن العملية أهم من النتائج الفورية، وكل خطوة صغيرة أخطوها اليوم هي استثمار لمستقبلي في تكنولوجيا المعلومات." },
+                hobbies: { 
+                    title: "هواياتي", 
+                    subtitle: "بعض الهوايات التي أمارسها في وقت فراغي",
+                    items: [
+                        { icon: 'fas fa-code', title: 'البرمجة', desc: 'تعلم لغات برمجة جديدة وعمل مشاريع صغيرة.' },
+                        { icon: 'fas fa-film', title: 'تحرير الفيديو', desc: 'تحرير الفيديوهات لمحتوى يوتيوب أو واجبات مدرسية.' },
+                        { icon: 'fa-solid fa-dumbbell', title: 'الجيم', desc: 'الحفاظ على اللياقة بتمارين منتظمة في الجيم.' },
+                        { icon: 'fa-solid fa-plane', title: 'السفر', desc: 'زيارة أماكن جديدة للبحث عن الإلهام.' }
+                    ]
+                },
+                quiz: { title: "اختبار الشخصية", subtitle: "أجب على بعض الأسئلة لتعرف مدى معرفتك بي!", next: "التالي", result: "النتيجة" },
+                game: { title: "لعبة الذاكرة", subtitle: '"اختبر معدل ذكائك" مع هذه اللعبة! لقد لعبها Alif من قبل!', memoryTitle: "لعبة الذاكرة", level: "المستوى:", target: "الهدف:", time: "الوقت:", moves: "الحركات:", restart: "إعادة التشغيل", howto: "كيفية اللعب:", rule1: "انقر على بطاقتين لقلبهما", rule2: "ابحث عن الأزواج المتطابقة", rule3: "أنهِ اللعبة في أقصر وقت ممكن", rule4: "المستوى 1: أكمل في 180 ثانية، المستوى 2: 120 ثانية، المستوى 3: 60 ثانية", rule5: "إذا نفد الوقت، انتهت اللعبة. ارتقِ بالمستوى بإكمالها في الوقت المحدد!", leaderboard: "لوحة الصدارة:" },
+                footer: {
+                    aboutTitle: "محفظتي",
+                    aboutDesc: "محفظة شخصية لـ Alif Adli Darmawan، طالب في SMAN 2 Bengkulu مهتم بالتكنولوجيا والبرمجة والإبداع.",
+                    navTitle: "التنقل",
+                    contactTitle: "الاتصال",
+                    eduTitle: "التعليم",
+                    copyright: "© 2025 محفظتي - ALIF ADLI DARMAWAN. جميع الحقوق محفوظة.",
+                    privacy: "سياسة الخصوصية",
+                    terms: "شروط الخدمة",
+                    cookie: "سياسة ملفات تعريف الارتباط"
+                }
+            },
+            zh: {
+                nav: { home: "首页", about: "关于", hobbies: "爱好", quiz: "测验", game: "游戏", contact: "联系" },
+                hero: { title: "你好。" },
+                about: { title: "关于我", desc1: "我创建这个网站是为了介绍自己、分享兴趣，并记录我在技术和创意方面的学习和发展过程。我是一名对编程、信息系统和视频编辑有浓厚兴趣的学生。对我来说，技术不仅仅是代码，而是如何将一个想法变成真实有用的解决方案。", desc2: "通过这个网站，我想展示我不断学习、发展技术技能并逐步建立更强作品集的承诺。我相信过程比即时结果更重要，我今天迈出的每一小步都是对我在IT领域未来的投资。" },
+                hobbies: { 
+                    title: "我的爱好", 
+                    subtitle: "我在空闲时间做的一些爱好",
+                    items: [
+                        { icon: 'fas fa-code', title: '编程', desc: '学习新的编程语言和做小项目。' },
+                        { icon: 'fas fa-film', title: '视频编辑', desc: '为YouTube内容或学校作业编辑视频。' },
+                        { icon: 'fa-solid fa-dumbbell', title: '健身', desc: '定期在健身房锻炼保持健康。' },
+                        { icon: 'fa-solid fa-plane', title: '旅行', desc: '去新地方寻找灵感。' }
+                    ]
+                },
+                quiz: { title: "性格测验", subtitle: "回答一些问题，看看你有多了解我！", next: "下一步", result: "测验结果" },
+                game: { title: "记忆游戏", subtitle: '用这个游戏测试你的智商！Alif玩过这个游戏！', memoryTitle: "记忆游戏", level: "等级:", target: "目标:", time: "时间:", moves: "步数:", restart: "重新开始", howto: "玩法:", rule1: "点击两张卡片翻转", rule2: "找到相同的配对", rule3: "尽快完成游戏", rule4: "第一级：180秒内完成，第二级：120秒，第三级：60秒", rule5: "如果时间用完，游戏结束。按时完成以升级！", leaderboard: "排行榜:" },
+                footer: {
+                    aboutTitle: "我的作品集",
+                    aboutDesc: "Alif Adli Darmawan的个人作品集，SMAN 2 Bengkulu的学生，对技术、编程和创意感兴趣。",
+                    navTitle: "导航",
+                    contactTitle: "联系方式",
+                    eduTitle: "教育",
+                    copyright: "© 2025 我的作品集 - ALIF ADLI DARMAWAN。保留所有权利。",
+                    privacy: "隐私政策",
+                    terms: "服务条款",
+                    cookie: "Cookie政策"
+                }
+            }
+        };
+
+        // Fungsi untuk menerapkan bahasa
+        function applyLanguage(lang) {
+            const t = translations[lang] || translations.id;
+            // Update elemen dengan data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const keys = el.getAttribute('data-i18n').split('.');
+                let value = t;
+                keys.forEach(key => { value = value[key]; });
+                if (value) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = value;
+                    } else {
+                        el.innerText = value;
+                    }
+                }
+            });
+
+            // Update judul halaman
+            document.title = t.hero.title + ' - MY PORTFOLIO';
+
+            // Perbarui konten hobbies
+            displayHobbies(lang);
+
+            // Simpan preferensi
+            localStorage.setItem('lang', lang);
+        }
+
+        function displayHobbies(lang) {
+            const hobbiesGrid = document.getElementById('hobbiesGrid');
+            if (!hobbiesGrid) return;
+            hobbiesGrid.innerHTML = '';
+
+            const t = translations[lang] || translations.id;
+            const hobbies = t.hobbies.items || [];
+
+            hobbies.forEach(hobby => {
+                const card = document.createElement('div');
+                card.className = 'hobby-card';
+                card.innerHTML = `
+                    <div class="hobby-icon"><i class="${hobby.icon}"></i></div>
+                    <h3>${hobby.title}</h3>
+                    <p>${hobby.desc}</p>
+                `;
+                hobbiesGrid.appendChild(card);
+            });
+        }
+
+        // Event listener untuk language select
+        const langSelect = document.getElementById('languageSelect');
+        langSelect.addEventListener('change', (e) => {
+            applyLanguage(e.target.value);
+        });
+
+        // Inisialisasi bahasa dari localStorage
+        const savedLang = localStorage.getItem('lang') || 'id';
+        langSelect.value = savedLang;
+        applyLanguage(savedLang);
+
+        // ============ KONTROL MUSIK GAME ============
+        const gameMusic = document.getElementById('gameMusic');
+        let isMusicPlaying = false;
+        let musicAutoplayDone = false;
+
+        function toggleGameMusic() {
+            const musicIcon = document.getElementById('musicIcon');
+            if (isMusicPlaying) {
+                gameMusic.pause();
+                musicIcon.className = 'fas fa-play';
+                isMusicPlaying = false;
+            } else {
+                gameMusic.volume = 0.3;
+                gameMusic.play()
+                    .then(() => {
+                        musicIcon.className = 'fas fa-pause';
+                        isMusicPlaying = true;
+                        musicAutoplayDone = true;
+                    })
+                    .catch(error => {
+                        console.log('Gagal memutar musik:', error);
+                        alert('Klik tombol musik sekali lagi untuk memutar (browser butuh interaksi user)');
+                        document.body.addEventListener('click', function playOnClick() {
+                            gameMusic.play();
+                            musicIcon.className = 'fas fa-pause';
+                            isMusicPlaying = true;
+                            musicAutoplayDone = true;
+                            document.body.removeEventListener('click', playOnClick);
+                        }, { once: true });
+                    });
+            }
+        }
+
+        const gameSection = document.getElementById('game');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !isMusicPlaying && !musicAutoplayDone) {
+                    gameMusic.volume = 0.3;
+                    gameMusic.play()
+                        .then(() => {
+                            isMusicPlaying = true;
+                            musicAutoplayDone = true;
+                            document.getElementById('musicIcon').className = 'fas fa-pause';
+                        })
+                        .catch(e => {
+                            console.log('Autoplay gagal, perlu interaksi user nanti');
+                        });
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(gameSection);
+
+        // Data untuk quiz (tidak diterjemahkan karena konten spesifik)
+        const quizData = [
+            { question: "Apa cita-cita utama Alif?", options: ["Dokter", "Software Engineer", "Pilot", "Guru"], answer: 1 },
+            { question: "Apa hobi utama Alif selain coding?", options: ["Bikin JJ", "Selingkuh", "Ngedit", "Sorak King Emyu"], answer: 2 },
+            { question: "Apa Alif pernah pacaran?", options: ["Ya dong", "Ga", "YTTA", "Halu bos"], answer: 1 },
+            { question: "iPhone berapa yang Alif pengen beli", options: ["iPhone 17 Pro Max 2TB Cash", "iPhone 13", "iPhone 11", "iPhone XR"], answer: 1 },
+            { question: "Siapa ketua Nasdang saat ini?", options: ["Pak Tonton", "Mr.J", "CEO MBG", "Ilmanto and friend"], answer: 1 }
+        ];
+
+        const memoryCards = ['🎮', '💻', '🎵', '🎬', '📸', '⚽', '📚', '🍜'];
+
+        // Variabel global quiz/game
+        let currentQuestion = 0;
+        let userAnswers = [];
+        let selectedOption = null;
+
+        let gameStarted = false;
+        let timer = 0;
+        let timerInterval = null;
+        let moves = 0;
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let currentLevel = 1;
+        const maxLevel = 3;
+        const levelTimeLimit = {1: 180, 2: 120, 3: 60};
+        let gameActive = true;
+
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const scrollAvatar = document.getElementById('scrollAvatar');
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressElement = document.getElementById('progress');
+        const resultElement = document.getElementById('result');
+        const scoreElement = document.getElementById('score');
+        const resultTextElement = document.getElementById('resultText');
+        const memoryGrid = document.getElementById('memoryGrid');
+        const movesElement = document.getElementById('moves');
+        const timerElement = document.getElementById('timer');
+        const levelElement = document.getElementById('level');
+        const targetTimeElement = document.getElementById('targetTime');
+        const restartBtn = document.getElementById('restartBtn');
+        const gameMessage = document.getElementById('gameMessage');
+
+        // Inisialisasi
+        document.addEventListener('DOMContentLoaded', function() {
+            initQuiz();
+            initMemoryGame();
+            initScrollAvatar();
+            initNav();
+
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Fungsi inisialisasi quiz
+        function initQuiz() {
+            userAnswers = new Array(quizData.length).fill(null);
+            showQuestion();
+
+            nextBtn.addEventListener('click', function() {
+                if (selectedOption === null && currentQuestion < quizData.length) {
+                    alert('Pilih jawaban terlebih dahulu!');
+                    return;
+                }
+                if (selectedOption !== null) {
+                    userAnswers[currentQuestion] = selectedOption;
+                }
+                if (currentQuestion < quizData.length - 1) {
+                    currentQuestion++;
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            });
+        }
+
+        function showQuestion() {
+            const quizItem = quizData[currentQuestion];
+            questionElement.textContent = quizItem.question;
+
+            selectedOption = userAnswers[currentQuestion] !== null ? userAnswers[currentQuestion] : null;
+
+            optionsElement.innerHTML = '';
+
+            const letters = ['A', 'B', 'C', 'D'];
+            quizItem.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'quiz-option';
+                if (selectedOption === index) {
+                    optionElement.classList.add('selected');
+                }
+                optionElement.innerHTML = `
+                    <div class="option-letter">${letters[index]}</div>
+                    <div class="option-text">${option}</div>
+                `;
+
+                optionElement.addEventListener('click', function() {
+                    document.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    selectedOption = index;
+                });
+
+                optionsElement.appendChild(optionElement);
+            });
+
+            progressElement.textContent = `Pertanyaan ${currentQuestion + 1} dari ${quizData.length}`;
+
+            if (currentQuestion === quizData.length - 1) {
+                nextBtn.innerHTML = '<i class="fas fa-flag-checkered"></i> Lihat Hasil';
+            } else {
+                nextBtn.innerHTML = '<i class="fas fa-arrow-right"></i> Selanjutnya';
+            }
+
+            resultElement.style.display = 'none';
+        }
+
+        function showResult() {
+            let correctCount = 0;
+            userAnswers.forEach((ans, idx) => {
+                if (ans === quizData[idx].answer) correctCount++;
+            });
+
+            scoreElement.textContent = correctCount;
+
+            if (correctCount >= 4) {
+                resultTextElement.textContent = "Pesan dari Alif = Iko baru kawan ambo!";
+            } else if (correctCount >= 2) {
+                resultTextElement.textContent = "Pesan dari Alif = Bagus! Lo lumayan tau juga yah about guej";
+            } else {
+                resultTextElement.textContent = "Pesan dari Alif = Fake friend terdeteksi!";
+            }
+
+            resultElement.style.display = 'block';
+            nextBtn.disabled = true;
+            nextBtn.innerHTML = '<i class="fas fa-check"></i> Selesai';
+        }
+
+        // ============ MEMORY GAME DENGAN EVENT DELEGATION ============
+        function initMemoryGame() {
+            let cards = [...memoryCards, ...memoryCards];
+            cards = shuffleArray(cards);
+
+            memoryGrid.innerHTML = '';
+
+            cards.forEach((symbol, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'memory-card';
+                cardElement.dataset.symbol = symbol;
+                cardElement.dataset.index = index;
+
+                cardElement.innerHTML = `
+                    <div class="front">${symbol}</div>
+                    <div class="back"><i class="fas fa-question"></i></div>
+                `;
+
+                memoryGrid.appendChild(cardElement);
+            });
+
+            // Hapus listener lama jika ada, pasang yang baru dengan delegasi
+            memoryGrid.removeEventListener('click', handleMemoryClick);
+            memoryGrid.addEventListener('click', handleMemoryClick);
+
+            flippedCards = [];
+            matchedPairs = 0;
+            moves = 0;
+            timer = 0;
+            gameStarted = false;
+            gameActive = true;
+            currentLevel = 1;
+            levelElement.textContent = currentLevel;
+            targetTimeElement.textContent = levelTimeLimit[currentLevel];
+            movesElement.textContent = moves;
+            timerElement.textContent = timer;
+            gameMessage.textContent = '';
+
+            clearInterval(timerInterval);
+        }
+
+        function handleMemoryClick(e) {
+            const card = e.target.closest('.memory-card');
+            if (!card) return;
+
+            // Panggil flipCard dengan konteks card
+            flipCard.call(card);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function flipCard() {
+            if (!gameActive || this.classList.contains('flipped') || flippedCards.length >= 2) {
+                return;
+            }
+
+            if (!gameStarted) {
+                startTimer();
+                gameStarted = true;
+            }
+
+            this.classList.add('flipped');
+            flippedCards.push(this);
+
+            if (flippedCards.length === 2) {
+                moves++;
+                movesElement.textContent = moves;
+
+                const card1 = flippedCards[0];
+                const card2 = flippedCards[1];
+
+                if (card1.dataset.symbol === card2.dataset.symbol) {
+                    matchedPairs++;
+                    flippedCards = [];
+
+                    if (matchedPairs === memoryCards.length) {
+                        if (currentLevel < maxLevel) {
+                            currentLevel++;
+                            levelElement.textContent = currentLevel;
+                            targetTimeElement.textContent = levelTimeLimit[currentLevel];
+                            gameMessage.textContent = `Level Up! Sekarang Level ${currentLevel}`;
+                            resetBoardForNextLevel();
+                        } else {
+                            gameMessage.textContent = 'Selamat! Anda menyelesaikan semua level! Hanya 5% orang yang sampai di level ini!';
+                            clearInterval(timerInterval);
+                            gameActive = false;
+                        }
+                    }
+                } else {
+                    setTimeout(() => {
+                        card1.classList.remove('flipped');
+                        card2.classList.remove('flipped');
+                        flippedCards = [];
+                    }, 1000);
+                }
+            }
+        }
+
+        function resetBoardForNextLevel() {
+            clearInterval(timerInterval);
+            timer = 0;
+            timerElement.textContent = timer;
+            moves = 0;
+            movesElement.textContent = moves;
+            matchedPairs = 0;
+            flippedCards = [];
+            gameStarted = false;
+            gameActive = true;
+
+            let cards = [...memoryCards, ...memoryCards];
+            cards = shuffleArray(cards);
+
+            memoryGrid.innerHTML = '';
+            cards.forEach((symbol, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'memory-card';
+                cardElement.dataset.symbol = symbol;
+                cardElement.dataset.index = index;
+
+                cardElement.innerHTML = `
+                    <div class="front">${symbol}</div>
+                    <div class="back"><i class="fas fa-question"></i></div>
+                `;
+
+                memoryGrid.appendChild(cardElement);
+            });
+
+            startTimer();
+            gameStarted = true;
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timer = 0;
+            timerElement.textContent = timer;
+
+            timerInterval = setInterval(() => {
+                timer++;
+                timerElement.textContent = timer;
+
+                if (gameActive && timer > levelTimeLimit[currentLevel]) {
+                    gameActive = false;
+                    clearInterval(timerInterval);
+                    gameMessage.textContent = 'Game Over! Waktu habis. Klik "Mulai Ulang Game" untuk coba lagi.';
+                }
+            }, 1000);
+        }
+
+        function restartMemoryGame() {
+            clearInterval(timerInterval);
+            initMemoryGame();
+        }
+
+        restartBtn.addEventListener('click', function() {
+            if (isMusicPlaying) {
+                gameMusic.pause();
+                gameMusic.currentTime = 0;
+                gameMusic.play().catch(e => {});
+            }
+            restartMemoryGame();
+        });
+
+        function initScrollAvatar() {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 200) {
+                    scrollAvatar.classList.add('visible');
+                } else {
+                    scrollAvatar.classList.remove('visible');
+                }
+
+                if (window.scrollY > 500) {
+                    scrollAvatar.innerHTML = '<i class="fas fa-arrow-up"></i>';
+                    scrollAvatar.onclick = function() {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    };
+                } else {
+                    scrollAvatar.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                    scrollAvatar.onclick = function() {
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    };
+                }
+            });
+        }
+
+        function initNav() {
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '&#9776;';
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '&#9776;';
+                    }
+
+                    document.querySelectorAll('.nav-link').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#') {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section, .section');
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
